@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
 function Sidebar({ modules }) {
   return(
@@ -19,4 +20,4 @@ function Sidebar({ modules }) {
   );
 }
 
-export default Sidebar;
+export default connect(state => ({ modules: state }))(Sidebar);
