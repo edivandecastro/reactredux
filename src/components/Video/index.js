@@ -1,12 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-function Video() {
+function Video({ module, lesson, dispatch }) {
   return(
     <div>
-      <strong>Módulo X</strong>
-      <span>Aula X</span>
+      <div>
+        <strong>{ module.title }</strong>
+      </div>
+      <div>
+        <span>{ lesson.title }</span>
+      </div>
+      <br/>
     </div>
   );
 }
 
-export default Video;
+export default connect(state => ({ module: state.activeModule, lesson: state.activeLesson }))(Video);
