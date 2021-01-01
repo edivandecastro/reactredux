@@ -15,4 +15,4 @@ function Video({ module, lesson, dispatch }) {
   );
 }
 
-export default connect(state => ({ module: state.activeModule, lesson: state.activeLesson }))(Video);
+export default connect(state => ({ module: state.course.activeModule, lesson: state.course.activeLesson }))(Video);
